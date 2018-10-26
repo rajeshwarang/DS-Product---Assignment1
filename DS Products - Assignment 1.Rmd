@@ -1,0 +1,41 @@
+---
+title: "DS Product - Assignment"
+author: "Rajeshwaran Gunalan"
+date: "26 October 2018"
+output: 
+  html_document:
+    keep_md: true 
+---
+
+```{r ,  warning=FALSE , message=FALSE}
+library(leaflet)
+library(plyr)
+library(dplyr)
+```
+
+### Initiating Map
+
+Initiating map with Leaflet
+```{r}
+Map1 <- leaflet() %>% 
+          addTiles()
+
+Map1
+```
+
+
+### Marking in the map
+
+Marking the Chennai Airport in the map.
+
+```{r}
+Map1 <- Map1 %>%
+        addMarkers(lat = 12.982222 , lng = 80.163611)
+
+Map1
+```
+
+
+
+
+
