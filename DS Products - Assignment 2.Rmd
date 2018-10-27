@@ -1,0 +1,62 @@
+---
+title: "DS Products - Assignment 2"
+author: "Rajeshwaran Gunalan"
+date: "27 October 2018"
+output: html_document
+---
+
+
+
+```{r ,  warning=FALSE , message=FALSE}
+library(leaflet)
+library(plyr)
+library(dplyr)
+library(plotly)
+```
+
+### Box Plot
+
+Box Plot
+
+```{r ,  warning=FALSE}
+
+p <- plot_ly(data = mtcars , x = as.factor(mtcars$am) , 
+        y=mtcars$mpg , type = "box" , color = as.factor(mtcars$am))
+
+p
+
+```
+
+
+
+### Scatter PLot
+
+Scatter Plot with Axis labels 
+```{r ,  warning=FALSE}
+
+ 
+ 
+ f <- list(
+   family = "Courier New, monospace",
+   size = 18,
+   color = "#7f7f7f"
+ )
+ x <- list(
+   title = "Displacement",
+   titlefont = f
+ )
+ y <- list(
+   title = "Miles per Gallon",
+   titlefont = f
+ )
+ 
+ 
+ 
+ plot_ly(data = mtcars , x = mtcars$disp , y = mtcars$mpg,
+         type = "scatter" , mode="markers" , 
+         color = as.factor(mtcars$am)) %>% 
+   layout(xaxis = x, yaxis = y)
+ 
+ 
+```
+
